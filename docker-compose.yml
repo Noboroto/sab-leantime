@@ -30,32 +30,8 @@ services:
 
 volumes:
   db_data:
-    name: sab_leantime_db_data
-    driver: local
-    driver_opts:
-      type: none
-      o: 'bind'
-      device: /home/david0403/volumes/sab-leantime/db_data
   userfiles:
-    name: sab_leantime_userfiles
-    driver: local
-    driver_opts:
-      type: none
-      o: 'bind'
-      device: /home/david0403/volumes/sab-leantime/userfiles
   public_userfiles:
-    name: sab_leantime_public_userfiles
-    driver: local
-    driver_opts:
-      type: none
-      o: 'bind'
-      device: /home/david0403/volumes/sab-leantime/public_userfiles
   config:
-    name: sab_leantime_config
-    driver: local
-    driver_opts:
-      type: none
-      o: 'bind'
-      device: /home/david0403/volumes/sab-leantime/config
 networks:
   leantime-net:
