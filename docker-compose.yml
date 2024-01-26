@@ -35,27 +35,27 @@ volumes:
     driver_opts:
       type: 'ext4'
       o: 'bind'
-      device: ~/volumes/sab-leantime/db_data
+      device: /home/david0403/volumes/sab-leantime/db_data
   userfiles:
     name: sab_leantime_userfiles
     driver: local
     driver_opts:
       type: 'ext4'
       o: 'bind'
-      device: ~/volumes/sab-leantime/userfiles
+      device: /home/david0403/volumes/sab-leantime/userfiles
   public_userfiles:
     name: sab_leantime_public_userfiles
     driver: local
     driver_opts:
       type: 'ext4'
       o: 'bind'
-      device: ~/volumes/sab-leantime/public_userfiles
+      device: /home/david0403/volumes/sab-leantime/public_userfiles
   config:
     name: sab_leantime_config
     driver: local
     driver_opts:
       type: 'ext4'
       o: 'bind'
-      device: ~/volumes/sab-leantime/config
+      device: /home/david0403/volumes/sab-leantime/config
 networks:
   leantime-net:
