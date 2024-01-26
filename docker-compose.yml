@@ -30,24 +30,10 @@ services:
       - leantime_db                                         # Don't start Leantime unless leantime_db is running
 
 volumes:
-  db_data:
-    driver: local
-    driver_opts:
-      device: /var/leantime/db_data
-      type: none
-      o: bind
-  userfiles:
-    driver: local
-    driver_opts:
-      device: /var/leantime/userfiles
-      type: none
-      o: bind
-  public_userfiles:
-    driver: local
-    driver_opts:
-      device: /var/leantime/public_userfiles
-      type: none
-      o: bind
+  - db_data:/var/leantime/db_data
+  - userfiles:/var/leantime/userfiles
+  - public_userfiles:/var/leantime/public_userfiles
+
 
 networks:
   leantime-net:
