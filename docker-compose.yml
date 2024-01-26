@@ -33,18 +33,21 @@ volumes:
   db_data:
     driver: local
     driver_opts:
-      src: /var/lib/leantime/db
-      type: bind
+      device: /var/lib/leantime/db_data
+      type: none
+      o: bind
   userfiles:
     driver: local
     driver_opts:
-      src: /var/lib/leantime/userfiles
-      type: bind
+      device: /var/lib/leantime/userfiles
+      type: none
+      o: bind
   public_userfiles:
     driver: local
     driver_opts:
-      src: /var/lib/leantime/public_userfiles
-      type: bind
+      device: /var/lib/leantime/public_userfiles
+      type: none
+      o: bind
 
 networks:
   leantime-net:
