@@ -31,8 +31,20 @@ services:
 
 volumes:
   db_data:
+    driver: local
+    driver_opts:
+      device: /var/lib/leantime/db
+      o: bind
   userfiles:
+    driver: local
+    driver_opts:
+      device: /var/lib/leantime/userfiles
+      o: bind
   public_userfiles:
+    driver: local
+    driver_opts:
+      device: /var/lib/leantime/public_userfiles
+      o: bind
 
 networks:
   leantime-net:
