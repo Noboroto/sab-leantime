@@ -5,7 +5,7 @@ services:
     volumes:
       - db_data:/var/lib/mysql
     restart: unless-stopped
-    env_file: ./.env                                        # Environment file with settings
+    env_file:  ./volumes/.env                                        # Environment file with settings
     networks:
       - leantime-net
     command: --character-set-server=UTF8MB4 --collation-server=UTF8MB4_unicode_ci
@@ -15,7 +15,7 @@ services:
     image: leantime/leantime:latest
     container_name: leantime
     restart: unless-stopped
-    env_file: ./.env                                        # Environment file with settings
+    env_file:  ./volumes/.env                                        # Environment file with settings
     networks:
       - leantime-net
 
@@ -35,27 +35,27 @@ volumes:
     driver_opts:
       type: none
       o: 'bind'
-      device: /home/david0403/volumes/sab-leantime/db_data
+      device:  ./volumes/db_data
   userfiles:
     name: sab_leantime_userfiles
     driver: local
     driver_opts:
       type: none
       o: 'bind'
-      device: /home/david0403/volumes/sab-leantime/userfiles
+      device:  ./volumes/userfiles
   public_userfiles:
     name: sab_leantime_public_userfiles
     driver: local
     driver_opts:
       type: none
       o: 'bind'
-      device: /home/david0403/volumes/sab-leantime/public_userfiles
+      device:  ./volumes/public_userfiles
   config:
     name: sab_leantime_config
     driver: local
     driver_opts:
       type: none
       o: 'bind'
-      device: /home/david0403/volumes/sab-leantime/config
+      device:  ./volumes/config
 networks:
   leantime-net:
